@@ -1,4 +1,4 @@
-EF-PHP-Site-Libraries
-=====================
+PHP-Pattern
+===========
 
-A variety of PHP libraries for building sites, pages, templates, and such.
+PHP library to manipulate text patterns with placeholders.
