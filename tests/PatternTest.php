@@ -2,7 +2,7 @@
 /**
  * PHP5
  */
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'autoload.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Pattern.php';
 
 /**
  * Tests for Pattern class
@@ -37,7 +37,7 @@ class PatternTest extends PHPUnit_Framework_TestCase {
 	 * @dataProvider patterns
 	 */
 	public function test_simple($patternString, $data, $expected) {
-		$pattern = new EasyForex\Pattern\Pattern($patternString);
+		$pattern = new \Qobo\Pattern\Pattern($patternString);
 		$this->assertEquals($expected, $pattern->parse($data));
 	}
 	
@@ -47,7 +47,7 @@ class PatternTest extends PHPUnit_Framework_TestCase {
 	 * @dataProvider patternsEdge
 	 */
 	public function edge($patternString, $data, $expected) {
-		$pattern = new EasyForex\Pattern\Pattern($patternString);
+		$pattern = new \Qobo\Pattern\Pattern($patternString);
 		$pattern->edge = '**';
 
 		$this->assertEquals($expected, $pattern->parse($data));

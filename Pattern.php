@@ -2,7 +2,7 @@
 /**
  * PHP5
  */
-namespace EasyForex\Pattern;
+namespace Qobo\Pattern;
 
 /**
  * Pattern class
