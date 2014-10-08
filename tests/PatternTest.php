@@ -2,7 +2,12 @@
 /**
  * PHP5
  */
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Pattern.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR 
+	. '..' . DIRECTORY_SEPARATOR 
+	. 'src' . DIRECTORY_SEPARATOR 
+	. 'Qobo' . DIRECTORY_SEPARATOR 
+	. 'Pattern' . DIRECTORY_SEPARATOR 
+	. 'Pattern.php';
 
 /**
  * Tests for Pattern class
