@@ -1,0 +1,26 @@
+{
+	"name": "qobo/pattern",
+	"type": "library",
+	"description": "PHP library to manipulate text patterns with placeholders",
+	"keywords": ["templating", "strings"],
+	"homepage": "https://github.com/QoboLtd/PHP-Pattern",
+	"license": "GPL-2.0",
+	"support": {
+		"source": "https://github.com/QoboLtd/PHP-Pattern",
+		"issues": "https://github.com/QoboLtd/PHP-Pattern/issues"
+	},
+	"authors": [
+		{
+			"name": "Leonid Mamchenkov",
+			"email": "leonid@mamchenkov.net",
+			"homepage": "http://mamchenkov.net",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "4.3.*"
+	}
+}
