@@ -43,7 +43,11 @@ class PatternTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_simple($patternString, $data, $expected) {
 		$pattern = new \Qobo\Pattern\Pattern($patternString);
-		$this->assertEquals($expected, $pattern->parse($data));
+		$result = $pattern->parse($data);
+		$this->assertEquals($expected, $result);
+
+		$result = (string) $pattern;
+		$this->assertEquals($expected, $result);
 	}
 	
 	/**
@@ -51,12 +55,22 @@ class PatternTest extends PHPUnit_Framework_TestCase {
 	 * 
 	 * @dataProvider patternsEdge
 	 */
-	public function edge($patternString, $data, $expected) {
+	public function test_edge($patternString, $data, $expected) {
 		$pattern = new \Qobo\Pattern\Pattern($patternString);
 		$pattern->edge = '**';
 
-		$this->assertEquals($expected, $pattern->parse($data));
+		$result = $pattern->parse($data);
+		$this->assertEquals($expected, $result);
+		
+		$result = (string) $pattern;
+		$this->assertEquals($expected, $result);
+
 	}
 
+	public function test_getPlaceholders() {
+		$pattern = new \Qobo\Pattern\Pattern('test %%one%% %%two%% %%one%% %%two%% three');
+		$result = $pattern->getPlaceholders();
+		$this->assertEquals(array('one', 'two'), $result);
+	}
 }
 ?>
