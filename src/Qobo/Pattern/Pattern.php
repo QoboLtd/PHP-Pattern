@@ -67,6 +67,21 @@ class Pattern {
 	}
 
 	/**
+	 * Get placeholders
+	 * 
+	 * @return array
+	 */
+	public function getPlaceholders() {
+		$resul = array();
+
+		if (preg_match_all('#' . $this->edge . '(.*?)' . $this->edge . '#', $this->pattern, $matches)) {
+			$result = array_unique($matches[1]);
+		}
+
+		return $result;
+	}
+
+	/**
 	 * Render the pattern
 	 * 
 	 * Note that if no data was provided via constructor, you'll get an initial pattern
