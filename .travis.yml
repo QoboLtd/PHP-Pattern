@@ -5,4 +5,4 @@ php:
     - 5.4
     - 5.5
       
-script: phpunit --coverage-text tests/
+script: phpunit --colors --coverage-text tests/
