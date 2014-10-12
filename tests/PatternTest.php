@@ -23,7 +23,7 @@ class PatternTest extends PHPUnit_Framework_TestCase {
 				array('test%%one%%',  array(),                   'test%%one%%'),
 				array('test%%one%%',  array('one'=>''),          'test'),
 				array('test%%one%%',  array('test'=>''),         'test%%one%%'),
-				array('test%%one%%',  array('one'=>'%%two%%', 'two'=>'three'), 'testthree'),
+				array('test%%one%%',  array('foo'=>'bar', 'one'=>'%%two%%', 'two'=>'%%three%%', 'three'=>'%%foo%%'), 'testbar'),
 			);
 	}
 	
