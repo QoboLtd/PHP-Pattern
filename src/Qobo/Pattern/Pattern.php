@@ -47,20 +47,33 @@ class Pattern {
 	 * is provided though, it will simply overwrite the earlier data.
 	 * 
 	 * @param array $data (Optional) Key=>Value list of placeholders and values
+	 * @param boolean $recursive (Optional) Whether or not to process options recursively
 	 * @return string
 	 */
-	public function parse(array $data = array()) {
+	public function parse(array $data = array(), $recursive = true) {
 		$result = $this->pattern;
 
 		if (!empty($data)) {
 			$this->data = $data;
 		}
 
-		if (!empty($this->data)) {
-			foreach ($this->data as $key => $value) {
-				$keyPattern = $this->edge . $key . $this->edge;
-				$result = str_replace($keyPattern, $value, $result);
-			}
+		// No data means there is nothing to process
+		if (empty($this->data)) {
+			return $result;
+		}
+
+		foreach ($this->data as $key => $value) {
+			$keyPattern = $this->edge . $key . $this->edge;
+			$result = str_replace($keyPattern, $value, $result);
+		}
+
+		if (!$recursive) {
+			return $result;
+		}
+		
+		$recursiveResult = (string) new Pattern($result, $data);
+		if ($recursiveResult == $result) {
+			return $result;
 		}
 
 		return $result;
