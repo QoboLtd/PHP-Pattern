@@ -71,9 +71,11 @@ class Pattern {
 			return $result;
 		}
 		
-		$recursiveResult = (string) new Pattern($result, $data);
-		if ($recursiveResult == $result) {
-			return $result;
+		$nextResult = new Pattern($result);
+		$nextResult = $nextResult->parse($this->data, false);
+		
+		if ($nextResult <> $result) {
+			$result = (string) new Pattern($nextResult, $this->data);
 		}
 
 		return $result;
