@@ -18,4 +18,19 @@ Add a dependency on ```qobo/pattern``` to your project's ```composer.json``` lik
 }
 ```
 
+Usage
+-----
 
+Here is the simplest example of usage:
+
+```
+<?php
+use \Qobo\Pattern\Pattern;
+
+$pattern = new Pattern('Hello %%NAME%%');
+print $pattern->parse(array('NAME' => 'Leonid'));
+// result: Hello Leonid
+?>
+```
+
+For more examples, check the unit tests.
