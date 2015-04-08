@@ -72,6 +72,12 @@ class PatternTest extends PHPUnit_Framework_TestCase {
 		$pattern = new \Qobo\Pattern\Pattern('test %%one%% %%two%% %%one%% %%two%% three');
 		$result = $pattern->getPlaceholders();
 		$this->assertEquals(array('one', 'two'), $result);
+
+		# Pattern without placeholders (issue #10)
+		$pattern = new \Qobo\Pattern\Pattern('blah');
+		$result = $pattern->getPlaceholders();
+		$this->assertTrue(is_array($result));
+		$this->assertEmpty($result);
 	}
 }
 ?>
