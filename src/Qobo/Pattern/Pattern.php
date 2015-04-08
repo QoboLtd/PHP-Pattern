@@ -87,7 +87,7 @@ class Pattern {
 	 * @return array
 	 */
 	public function getPlaceholders() {
-		$resul = array();
+		$result = array();
 
 		if (preg_match_all('#' . $this->edge . '(.*?)' . $this->edge . '#', $this->pattern, $matches)) {
 			$result = array_unique($matches[1]);
