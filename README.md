@@ -13,7 +13,7 @@ Add a dependency on ```qobo/pattern``` to your project's ```composer.json``` lik
 ```
 {
 	"require": {
-		"qobo/pattern": "1.0.*"
+		"qobo/pattern": "~1.0"
 	}
 }
 ```
