@@ -41,4 +41,16 @@ print $pattern->parse(array('NAME' => 'Leonid'));
 ?>
 ```
 
-For more examples, check the unit tests.
+Here is an example with recursive parsing (the order of arguments doesn't matter):
+
+```php
+<?php
+require_once 'vendor/autoload.php';
+
+$pattern = new \Qobo\Pattern\Pattern('Hello %%NAME%%');
+print $pattern->parse(array('TITLE' => 'Mr.', 'NAME' => '%%TITLE%% Leonid'));
+// result: Hello Mr. Leonid
+?>
+```
+
+For more examples, see the unit tests.
