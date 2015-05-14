@@ -14,7 +14,7 @@ Install
 
 Add a dependency on ```qobo/pattern``` to your project's ```composer.json``` like so:
 
-```
+```json
 {
 	"require": {
 		"qobo/pattern": "~1.0"
@@ -27,7 +27,7 @@ Usage
 
 Here is the simplest example of usage:
 
-```
+```php
 <?php
 use \Qobo\Pattern\Pattern;
 
