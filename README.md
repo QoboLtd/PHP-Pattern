@@ -22,6 +22,10 @@ Add a dependency on ```qobo/pattern``` to your project's ```composer.json``` lik
 }
 ```
 
+or simply install from the command line like so:
+
+```$ composer require qobo/pattern:1.0.*```
+
 Usage
 -----
 
