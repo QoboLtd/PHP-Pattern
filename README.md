@@ -29,9 +29,9 @@ Here is the simplest example of usage:
 
 ```php
 <?php
-use \Qobo\Pattern\Pattern;
+require_once 'vendor/autoload.php';
 
-$pattern = new Pattern('Hello %%NAME%%');
+$pattern = new \Qobo\Pattern\Pattern('Hello %%NAME%%');
 print $pattern->parse(array('NAME' => 'Leonid'));
 // result: Hello Leonid
 ?>
