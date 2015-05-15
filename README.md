@@ -14,7 +14,7 @@ Install
 
 Add a dependency on ```qobo/pattern``` to your project's ```composer.json``` like so:
 
-```
+```json
 {
 	"require": {
 		"qobo/pattern": "~1.0"
@@ -22,19 +22,35 @@ Add a dependency on ```qobo/pattern``` to your project's ```composer.json``` lik
 }
 ```
 
+or simply install from the command line like so:
+
+```$ composer require qobo/pattern:1.0.*```
+
 Usage
 -----
 
 Here is the simplest example of usage:
 
-```
+```php
 <?php
-use \Qobo\Pattern\Pattern;
+require_once 'vendor/autoload.php';
 
-$pattern = new Pattern('Hello %%NAME%%');
+$pattern = new \Qobo\Pattern\Pattern('Hello %%NAME%%');
 print $pattern->parse(array('NAME' => 'Leonid'));
 // result: Hello Leonid
 ?>
 ```
 
-For more examples, check the unit tests.
+Here is an example with recursive parsing (the order of arguments doesn't matter):
+
+```php
+<?php
+require_once 'vendor/autoload.php';
+
+$pattern = new \Qobo\Pattern\Pattern('Hello %%NAME%%');
+print $pattern->parse(array('TITLE' => 'Mr.', 'NAME' => '%%TITLE%% Leonid'));
+// result: Hello Mr. Leonid
+?>
+```
+
+For more examples, see the unit tests.
