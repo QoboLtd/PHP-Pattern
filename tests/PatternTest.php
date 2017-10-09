@@ -62,7 +62,6 @@ class PatternTest extends \PHPUnit_Framework_TestCase
         
         $result = (string) $pattern;
         $this->assertEquals($expected, $result);
-
     }
 
     public function testGetPlaceholders()
